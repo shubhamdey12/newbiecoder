@@ -1,0 +1,69 @@
+# Which shape would you like to calculate the area for? Please enter the option number-
+#1. Square
+#2. Rectangle
+#3. Triangle
+#4. Circle
+#Enter Option: _
+
+def square(side):
+    sq_area = side**2
+    return sq_area
+
+def rectangle(lside,bside):
+    rect_area = lside * bside
+    return rect_area
+
+def triangle(base,height):
+    tri_area = (base * height) / 2
+    return tri_area
+
+def circle(radius):
+    pi = 3.14
+    cir_area = pi * radius ** 2
+    return cir_area
+
+print('which shape would you like to calculate area for? Please enter option number:')
+print('1. Square')
+print('2. Rectangle')
+print('3. Triangle')
+print('4. Circle')
+
+while True:
+    choice = input('Enter Choice: 1/2/3/4: ')
+    
+    if choice in ('1','2','3','4'):
+        
+        if choice == '1':
+            try:
+                side = float(input('Enter Side: '))
+                print('Area of square is: ',square(side))
+            except ValueError:
+                print('Invaild Input, Please input a number: ')
+        
+        elif choice == '2':
+            try:   
+                lside = float(input('Enter Lenght: '))
+                bside = float(input('Enter Breath: '))
+                print('Area of Rectangle is: ',rectangle(lside,bside))
+            except ValueError:
+                print('Invaild Input, Please input a number: ')
+        
+        elif choice == '3':
+            try:    
+                base = float(input('Enter Base: '))
+                height = float(input('Enter Height: '))
+                print ('Area of Triangle is: ',triangle(base,height))
+            except ValueError:
+                print('Invaild Input, Please input a number: ')
+            
+        elif choice =='4':
+            try:  
+                radius = float(input('Enter Radius: '))
+                print ('Area of circle is: ',circle(radius))
+            except ValueError:
+                print('Invaild Input, Please input a number: ')
+            
+        break
+        
+    else:
+        print('Invalid Choice')
